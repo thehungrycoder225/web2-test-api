@@ -25,6 +25,8 @@ mongoose
 // Register routes
 app.use('/api/authors', router);
 
+app.get('/', (req, res) => res.send('Express on Vercel'));
+
 // Start the server
 const port = process.env.PORT || 3000;
 app.listen(port, () =>
