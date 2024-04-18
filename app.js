@@ -24,7 +24,7 @@ mongoose
   .catch((error) => console.error('Failed to connect to MongoDB', error));
 
 // Register routes
-app.use('/.netlify/functions/api', router);
+app.use('/api/authors', router);
 
 app.get('/', (req, res) => res.send('Api is Running'));
 
