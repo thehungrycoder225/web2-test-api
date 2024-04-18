@@ -5,7 +5,6 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import router from '../routes/author.js';
 import serverless from 'serverless-http';
-import { handler } from './../app';
 
 dotenv.config();
 
