@@ -4,6 +4,8 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import router from './routes/author.js';
+import serveless from 'serverless-http';
+
 
 dotenv.config();
 
