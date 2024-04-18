@@ -3,7 +3,7 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-import router from './routes/author.js';
+import router from '../routes/author.js';
 
 dotenv.config();
 
@@ -25,12 +25,12 @@ mongoose
 // Register routes
 app.use('/api/authors', router);
 
-app.get('/', (req, res) =>
-  res.send({'Api is Running'})
-);
+app.get('/', (req, res) => res.send('Api is Running..'));
 
 // Start the server
 const port = process.env.PORT || 3000;
 app.listen(port, () =>
   console.log(`Server is running on port http://localhost:${port}`)
 );
+
+export const handler = serveless(app);

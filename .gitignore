@@ -1,5 +1,6 @@
 # Ignore node_modules directory
 node_modules/
+.netlify
 
 # Ignore build artifacts
 build/
@@ -43,3 +44,6 @@ Thumbs.db
 # Ignore backup files
 *~
 .vercel
+
+# Local Netlify folder
+.netlify
