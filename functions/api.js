@@ -5,6 +5,7 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import router from '../routes/author.js';
 import serverless from 'serverless-http';
+import { handler } from './../app';
 
 dotenv.config();
 
@@ -24,7 +25,7 @@ mongoose
   .catch((error) => console.error('Failed to connect to MongoDB', error));
 
 // Register routes
-app.use('/api/authors', router);
+app.use('/.netlify/functions/api', router);
 
 app.get('/', (req, res) => res.send('Api is Running..'));
 
@@ -34,4 +35,5 @@ app.listen(port, () =>
   console.log(`Server is running on port http://localhost:${port}`)
 );
 
-export const handler = serverless(app);
+const handler = serverless(app);
+export default handler;
